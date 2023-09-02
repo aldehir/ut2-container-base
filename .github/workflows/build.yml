@@ -18,6 +18,6 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           image: ut2004-dedicated-server
-          tags: 3369.3+dev ${{ github.sha }}
+          tags: 3369.3-dev ${{ github.sha }}
           containerfiles: |
             ./Containerfile
