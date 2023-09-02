@@ -15,3 +15,4 @@ EXPOSE "8080/tcp"
 
 WORKDIR /opt/ut2k4/System
 ENTRYPOINT ["./ucc-bin", "server"]
+CMD ["DM-Antalus?Game=xGame.xDeathMatch"]
