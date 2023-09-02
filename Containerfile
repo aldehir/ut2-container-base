@@ -4,9 +4,9 @@ ARG DEDICATED_SERVER_URL=https://cdn.alde.dev/ut2k4/dedicated-server/linux/ut200
 
 LABEL org.opencontainers.image.created="2023-09-01T12:00:00Z" \
       org.opencontainers.image.authors="Alde Rojas" \
-      org.opencontainers.image.url="https://github.com/aldehir/ut2k4-server-container" \
       org.opencontainers.image.title="UT2004 Dedicated Server Container" \
-      org.opencontainers.image.description="UT2004 Dedicated Server Container"
+      org.opencontainers.image.description="UT2004 Dedicated Server Container" \
+      org.opencontainers.image.source="https://github.com/aldehir/ut2004-server-container"
 
 WORKDIR /opt/ut2k4
 
