@@ -15,8 +15,7 @@ RUN dnf install -y glibc.i686 libgcc.i686 libstdc++.i686 && \
     rm -f ut2004-dedicated-server-3369.3.tar.gz
 
 COPY UT2004.ini System/UT2004.ini
-
-WORKDIR /opt/ut2k4/System
+COPY --chmod=755 entrypoint entrypoint
 
 VOLUME ["/opt/ut2k4/custom"]
 
@@ -25,5 +24,5 @@ EXPOSE "80/tcp" \
        "7778/udp" \
        "7787/udp"
 
-ENTRYPOINT ["./ucc-bin", "server"]
+ENTRYPOINT ["/opt/ut2k4/entrypoint"]
 CMD ["DM-Antalus?Game=xGame.xDeathMatch"]

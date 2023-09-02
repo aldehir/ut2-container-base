@@ -1,0 +1,3 @@
+#!/bin/bash
+cd System
+exec ./ucc-bin server "$@" -nohomedir
