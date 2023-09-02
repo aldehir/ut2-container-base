@@ -1,4 +1,11 @@
 FROM rockylinux:8
+
+LABEL org.opencontainers.image.created="2023-09-01T12:00:00Z" \
+      org.opencontainers.image.authors="Alde Rojas" \
+      org.opencontainers.image.url="https://github.com/aldehir/ut2k4-server-container" \
+      org.opencontainers.image.title="UT2004 Dedicated Server Container" \
+      org.opencontainers.image.description="UT2004 Dedicated Server Container"
+
 WORKDIR /opt/ut2k4
 
 COPY ut2004-dedicated-server-3369.3.tar.gz ./
@@ -13,10 +20,10 @@ WORKDIR /opt/ut2k4/System
 
 VOLUME ["/opt/ut2k4/custom"]
 
-EXPOSE "80/tcp"
-EXPOSE "7777/udp"
-EXPOSE "7778/udp"
-EXPOSE "7787/udp"
+EXPOSE "80/tcp" \
+       "7777/udp" \
+       "7778/udp" \
+       "7787/udp"
 
 ENTRYPOINT ["./ucc-bin", "server"]
 CMD ["DM-Antalus?Game=xGame.xDeathMatch"]
