@@ -1,5 +1,7 @@
 FROM rockylinux:8
 
+ARG DEDICATED_SERVER_URL=https://cdn.alde.dev/ut2k4/dedicated-server/linux/ut2004-dedicated-server-3369.3.tar.gz
+
 LABEL org.opencontainers.image.created="2023-09-01T12:00:00Z" \
       org.opencontainers.image.authors="Alde Rojas" \
       org.opencontainers.image.url="https://github.com/aldehir/ut2k4-server-container" \
@@ -8,9 +10,8 @@ LABEL org.opencontainers.image.created="2023-09-01T12:00:00Z" \
 
 WORKDIR /opt/ut2k4
 
-COPY ut2004-dedicated-server-3369.3.tar.gz ./
-
-RUN dnf install -y glibc.i686 libgcc.i686 libstdc++.i686 && \
+RUN curl -LO "$DEDICATED_SERVER_URL" && \
+    dnf install -y glibc.i686 libgcc.i686 libstdc++.i686 && \
     tar -xf ut2004-dedicated-server-3369.3.tar.gz --strip-components=1 && \
     rm -f ut2004-dedicated-server-3369.3.tar.gz
 
