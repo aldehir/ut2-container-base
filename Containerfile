@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.created="2023-09-01T12:00:00Z" \
       org.opencontainers.image.description="UT2004 Dedicated Server" \
       org.opencontainers.image.source="https://github.com/aldehir/ut2004-server-container"
 
-WORKDIR /opt/ut2k4
+WORKDIR /opt/ut2004
 
 RUN curl -LO "$DEDICATED_SERVER_URL" && \
     dnf install -y glibc.i686 libgcc.i686 libstdc++.i686 && \
@@ -18,12 +18,12 @@ RUN curl -LO "$DEDICATED_SERVER_URL" && \
 COPY UT2004.ini System/UT2004.ini
 COPY --chmod=755 entrypoint entrypoint
 
-VOLUME ["/opt/ut2k4/custom"]
+VOLUME ["/opt/ut2004/custom"]
 
 EXPOSE "80/tcp" \
        "7777/udp" \
        "7778/udp" \
        "7787/udp"
 
-ENTRYPOINT ["/opt/ut2k4/entrypoint"]
+ENTRYPOINT ["/opt/ut2004/entrypoint"]
 CMD ["DM-Antalus?Game=xGame.xDeathMatch"]
