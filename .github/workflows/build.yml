@@ -7,9 +7,9 @@ on:
       - release-*
 
 env:
-  IMAGE_NAME: ut2004-server
+  IMAGE_NAME: base
   IMAGE_TAGS: 3369 3369.3 3369.3-${{ github.ref_name }} ${{ github.sha }}
-  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+  IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}/ut2
   REGISTRY_USER: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ github.token }}
 
