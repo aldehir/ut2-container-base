@@ -1,6 +1,6 @@
 FROM rockylinux:8
 
-ARG DEDICATED_SERVER_URL=https://cdn.alde.dev/ut2k4/dedicated-server/linux/ut2004-dedicated-server-3369.3.tar.gz
+ARG DEDICATED_SERVER_URL=https://cdn.alde.dev/ut2k4/dedicated-server/linux/ut2004-dedicated-server-3369.3-2.tar.gz
 
 WORKDIR /opt/ut2004
 
