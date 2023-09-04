@@ -4,10 +4,10 @@ ARG DEDICATED_SERVER_URL=https://cdn.alde.dev/ut2k4/dedicated-server/linux/ut200
 
 WORKDIR /opt/ut2004
 
-RUN curl -LO "$DEDICATED_SERVER_URL" && \
+RUN curl -L -o server.tar.gz "$DEDICATED_SERVER_URL" && \
     dnf install -y glibc.i686 libgcc.i686 libstdc++.i686 && \
-    tar -xf ut2004-dedicated-server-3369.3.tar.gz --strip-components=1 && \
-    rm -f ut2004-dedicated-server-3369.3.tar.gz
+    tar -xf server.tar.gz --strip-components=1 && \
+    rm -f server.tar.gz
 
 COPY UT2004.ini System/UT2004.ini
 COPY --chmod=755 entrypoint entrypoint
